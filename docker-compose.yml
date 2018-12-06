@@ -1,0 +1,50 @@
+version: '2'
+services:
+  solr:
+    image: solr:5.5
+    hostname: solr2.5
+    ports:
+      - "8984:8983"
+    volumes:
+      - ./solr/ckan:/solr_config
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - ckan
+      - /solr_config
+  solr2.6:
+    image: solr:5.5
+    hostname: solr2.6
+    ports:
+      - "8985:8983"
+    volumes:
+      - ./solr/ckan2.6:/solr_config
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - ckan
+      - /solr_config
+  solr2.7:
+    image: solr:5.5
+    hostname: solr2.7
+    ports:
+      - "8986:8983"
+    volumes:
+      - ./solr/ckan2.7:/solr_config
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - ckan
+      - /solr_config
+  solr2.8:
+    image: solr:5.5
+    hostname: solr2.8
+    ports:
+      - "8987:8983"
+    volumes:
+      - ./solr/ckan2.8:/solr_config
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - ckan
+      - /solr_config
