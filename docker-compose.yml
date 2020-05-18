@@ -48,3 +48,15 @@ services:
       - solr-precreate
       - ckan
       - /solr_config
+  solr2.3:
+    image: solr:5.5
+    hostname: solr2.3
+    ports:
+      - "8988:8983"
+    volumes:
+      - ./solr/ckan2.3:/solr_config
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - ckan
+      - /solr_config
